@@ -1,0 +1,14 @@
+ 忽略插件管理器自动下载的插件
+lazy-lock.json.bak
+plugin/
+pack/
+
+# 忽略临时文件
+*.swp
+*.swo
+*~
+.DS_Store
+
+# 忽略撤销/备份文件 (如果配置了的话)
+undo/
+backup/
