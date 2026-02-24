@@ -26,14 +26,14 @@ opt.splitbelow = true     -- 水平新窗口在下边
 -- 只要你在 WSL 里，用 y (yank) 复制的内容，就能直接在 Windows 里 Ctrl+V 粘贴
 if vim.fn.has("wsl") == 1 then
     vim.g.clipboard = {
-        name = "WslClipboard",
+        name = "win32yank-wsl",
         copy = {
-            ["+"] = "clip.exe",
-            ["*"] = "clip.exe",
+            ["+"] = "win32yank.exe -i --crlf",
+            ["*"] = "win32yank.exe -i --crlf",
         },
         paste = {
-            ["+"] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
-            ["*"] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+            ["+"] = "win32yank.exe -o --lf",
+            ["*"] = "win32yank.exe -o --lf",
         },
         cache_enabled = 0,
     }
