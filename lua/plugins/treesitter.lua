@@ -1,7 +1,6 @@
 -- 语法高亮
 return {
     "nvim-treesitter/nvim-treesitter",
-    -- 使用 GitCode 镜像,因为GitHub克隆始终有问题
     url = "https://github.com/nvim-treesitter/nvim-treesitter.git",
     event = { "BufReadPre", "BufNewFile" },
     build = ":TSUpdate",
